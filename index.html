@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Coins App PHP+JS</title>
+<link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+
+	<h1>Coin App</h1>
+
+<main> 
+
+   <p> This PHP application validates a given number of pennies and will calculate the minimum number of Sterling coins needed to make that amount.</p>
+   
+   <p>Eg. 123p = 1 x £1, 1 x 20p, 1 x 2p, 1 x 1p</p>
+
+<form name = "coinFrom" method="get" action="denominations.php" > 
+
+    <p> 
+        <label for="name">Amount:</label> 
+        <input id="amount" name="amount"> 
+    </p> 
+    
+    <button type="submit" value="Send" name="getDenominations">Get Denominations</button> 
+
+</form>
+
+<span id="formerror"> </span>
+</main>
+
+<footer>  php+js coin exercise completed by Machel Slack - Monday June 27th 2016 </footer>
+
+<script src="scripts.js"></script>
+
+</body>
+
+</html>
