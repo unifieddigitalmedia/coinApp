@@ -1,21 +1,46 @@
-* { font-family: Calibri, sans-serif; } 
-body { width: 900px; margin: auto; }
+
+body { 
+
+	width: 900px; margin: auto; 
+	font-family: Calibri, sans-serif; 
+
+}
+
 h1 { 
     padding: 10px 10px 20px; 
     margin: 0; 
     font-weight: normal; 
     font-size: 3em; 
 }
+
 p { 
     font-family: Helvetica, Arial, Sans-Serif; 
     line-height: 1.6; 
     text-align: justify; 
     padding: 10px; 
 }
-footer { padding: 10px; background: #dfdfdf; text-align: center; }
-form p { margin: 0; padding: 0; }
-form input, form textarea { width: 300px; display: block; }
-form button { margin: 10px 0; padding: 5px; width: 148px; }
+
+footer { 
+		padding: 10px; 
+		background: #dfdfdf; 
+		text-align: center; 
+
+	}
+form p { 
+	margin: 0; 
+	padding: 0; 
+}
+
+form input, form textarea { 
+	width: 300px; 
+	display: block; 
+}
+form button { 
+
+	margin: 10px 0; 
+	padding: 5px; 
+	width: 148px; 
+}
 
 .blackOverlay{
          color:black;
@@ -26,7 +51,7 @@ form button { margin: 10px 0; padding: 5px; width: 148px; }
          width: 100%;
          height: 100%;
          background-color: black;
-         z-index:1001;
+         z-index:1;
          -moz-opacity: 0.8;
          opacity:.80;
          filter: alpha(opacity=80);
@@ -42,9 +67,18 @@ form button { margin: 10px 0; padding: 5px; width: 148px; }
          padding: 16px;
          border: 16px solid orange;
          background-color: white;
-         z-index:1002;
+         z-index:2;
          overflow: auto;
       }
+
+.close {
+
+		cursor:pointer;
+		float:right;
+		color:red;
+
+}
+
 
  table {
          width:100%
