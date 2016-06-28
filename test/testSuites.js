@@ -18,10 +18,12 @@ it("should validate that amount entered is a pound value", function() {
 
 
 
-  var amount = "1.23p" ;
+  var amount = "£1p" ;
 
-  var poundPattern = /(^\d+[.]\d+$)|(^\d+$)|(^[£]\d+[.]\d+[p]$)|(^[£]\d+[.][p]$)|(^[£]\d+[.]\d+$)|(^[£]\d+$)|(^\d+[.][p]$)|(^[£]\d+[.]$)|(^0+\d+[.]\d+$)|(^0+\d+[.]\d+[p]$)|(^\d+[.]\d+[p]$)/g;
+  //var poundPattern = /(^[£]\d+$)(^\d+[.]\d+$)|(^\d+$)|(^[£]\d+[.]\d+[p]$)|(^[£]\d+[.][p]$)|(^[£]\d+[.]\d+$)|(^[£]\d+$)|(^\d+[.][p]$)|(^[£]\d+[.]$)|(^0+\d+[.]\d+$)|(^0+\d+[.]\d+[p]$)|(^\d+[.]\d+[p]$)/g;
   
+
+  var poundPattern = /(^£\d+[.][p]$)|(^£\d+[p]$)|(^\d+[.]\d+$)|(^\d+$)|(^£\d+[.]\d+[p]$)|(^[£]\d+[p]$)(^£\d+[.][p]$)|(^£\d+[.]\d+$)|(^£\d+$)|(^\d+[.][p]$)|(^£\d+[.]$)|(^0+\d+[.]\d+$)|(^0+\d+[.]\d+[p]$)|(^\d+[.]\d+[p]$)/g;
 
     expect(poundPattern.test(amount)).toBe(true);
   
