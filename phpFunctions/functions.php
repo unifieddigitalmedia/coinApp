@@ -46,32 +46,39 @@ function that validates whether the amount parameter is a string and meets the c
 
 /*Regex patterns are used with php's preg_match function to determine whether amount submitted is a pence or pound value*/
 
-$poundPattern = "/(^\d+[.]\d+$)|(^\d+$)|(^[£]\d+[.]\d+[p]$)|(^[£]\d+[.][p]$)|(^[£]\d+[.]\d+$)|(^[£]\d+$)|(^\d+[.][p]$)|(^[£]\d+[.]$)|(^0+\d+[.]\d+$)|(^0+\d+[.]\d+[p]$)|(^\d+[.]\d+[p]$)/";
+$poundPattern = "/(^£\d+[.][p]$)|(^£\d+[p]$)|(^\d+[.]\d+$)|(^\d+$)|(^£\d+[.]\d+[p]$)|(^[£]\d+[p]$)(^£\d+[.][p]$)|(^£\d+[.]\d+$)|(^£\d+$)|(^\d+[.][p]$)|(^£\d+[.]$)|(^0+\d+[.]\d+$)|(^0+\d+[.]\d+[p]$)|(^\d+[.]\d+[p]$)/";
 
 $pencePattern = "/(^[.]\d+[p]$)|(^\d+[p]$)|(^[.]\d+$)/";
 
 
-if (preg_match($pencePattern,$amount)){
+if (preg_match($pencePattern,$amount) == 1 ){
 
 /*php's explode function is used to separte pound value from pence value */
 
- $amount = explode(".",round($amount,2));
+$pattern = "/[£]|[p]|[,]/";
 
- $pattern = "/[,]/";
+$amount = preg_replace($pattern,"",$amount);
+
+$amount = explode(".",round($amount,2));
+
 
 /*php's preg_replace function is used to strip any comma characters and intval is used to covert to string value to an integer value for arthimetic calculations */
+
 
  return $amount[1] + (intval(preg_replace($pattern,"",$amount[0])) );
 
 
-} else if(preg_match($poundPattern,$amount)){
+} else if(preg_match($poundPattern,$amount) == 1 ){
 
 
- $amount = explode(".",round($amount,2));
 
- $pattern = "/[,]/";
+$pattern = "/[£]|[p]|[,]/";
 
- return $amount[1] + (intval(preg_replace($pattern,"",$amount[0])) * 100 );
+$amount = preg_replace($pattern,"",$amount);
+
+$amount = explode(".",round($amount,2));
+
+return $amount[1] + (intval(preg_replace($pattern,"",$amount[0])) * 100 );
 
 
 }
@@ -79,7 +86,7 @@ if (preg_match($pencePattern,$amount)){
 else {
 
 
- return "Not match";
+ return "a Not match";
 
 
 }

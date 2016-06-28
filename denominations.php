@@ -44,7 +44,7 @@ $error = "";
 
 
 
-$error = "Cannot calculate non pound or non pence values";
+$error =  "Cannot calculate non pound or non pence values";
 
 
 
